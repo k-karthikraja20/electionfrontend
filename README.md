@@ -1,20 +1,76 @@
-# React + Vite
+# Election System Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A modern, responsive, and secure frontend application for the College / Campus Election Management System. Built with **React 19**, **Vite**, **React Router v7**, **Bootstrap 5**, and **Axios**.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Role-Based Access Control (RBAC):**
+  - **Admin:** Manage elections, candidate approvals, student registers, supervisors, and review live election results.
+  - **Candidate:** View election status, eligibility requirements, submit applications, and monitor application progress.
+  - **Student:** View candidate lists, cast secure votes in active elections, and review personal vote history.
+  - **Supervisor:** Real-time vote verification, election monitoring, and candidate management.
+- **Client-Side Routing:** Powered by React Router with protected role-based layouts.
+- **RESTful API Client:** Centralized Axios instance with request token injection and 401 session expiration handling.
+- **Responsive UI:** Clean, intuitive UI built with Bootstrap 5 and React Icons.
 
-## React Compiler
+---
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+## Tech Stack
 
-Note: This will impact Vite dev & build performances.
-You can also try [the experimental native React Compiler support in plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md#rust-react-compiler) by using `compiler: true` in the plugin options instead of using the Babel plugin.
+- **Framework:** [React 19](https://react.dev/)
+- **Build Tool:** [Vite](https://vite.dev/)
+- **Routing:** [React Router v7](https://reactrouter.com/)
+- **Styling:** Bootstrap 5 & Custom CSS
+- **Icons:** React Icons
+- **HTTP Client:** Axios
 
-## Expanding the Oxlint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
-"# Full-project" 
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v18 or higher recommended)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/k-karthikraja20/electionfrontend.git
+   cd electionfrontend
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Configure Environment Variables:
+   Create a `.env` file in the root directory (refer to `.env.example`):
+   ```env
+   VITE_API_URL=http://localhost:5000/api
+   ```
+   *For production, replace with your deployed backend API URL.*
+
+4. Start development server:
+   ```bash
+   npm run dev
+   ```
+
+5. Build for production:
+   ```bash
+   npm run build
+   ```
+
+---
+
+## Deployment on Vercel
+
+- **Framework Preset:** Vite
+- **Root Directory:** `./`
+- **Build Command:** `npm run build`
+- **Output Directory:** `dist`
+- **Environment Variables:**
+  - `VITE_API_URL`: Your deployed backend API URL (e.g. `https://your-election-backend.vercel.app/api` or `https://your-backend.onrender.com/api`)
+- SPA routing rewrites are configured in `vercel.json`.
